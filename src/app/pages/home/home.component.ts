@@ -8,3 +8,10 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 }
+
+interface IRepetitor {
+  firstname: string,
+  middlename: string,
+  lastname: string,
+
+}

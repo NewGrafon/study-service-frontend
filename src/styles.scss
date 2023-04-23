@@ -2,21 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: BloggerSans;
-}
-
-.logo {
-  cursor: pointer;
 }
 
 .cursor-default {
   cursor: default !important;
 }
 
+.hidden {
+  display: none !important;
+}
 
-body{
+body {
   background-color: #ededed;
 }

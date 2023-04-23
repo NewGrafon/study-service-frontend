@@ -5,20 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 import { AccountLoginComponent } from './pages/account-login/account-login.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AccountProfileComponent } from './pages/account-profile/account-profile.component';
+import { TeacherCardComponent } from './components/teacher-card/teacher-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccountRegistrationComponent,
     AccountLoginComponent,
-    NavigationComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AccountProfileComponent,
+    TeacherCardComponent
   ],
   imports: [
     BrowserModule,

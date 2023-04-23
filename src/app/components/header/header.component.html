@@ -1,13 +1,16 @@
 <div class="header">
   <div class="header-content">
-    <p class="logo"><span>A</span>penix</p>
+    <p routerLink="/" [ngClass]="['logo', currentRoute === '/' ? 'cursor-default': '']">
+      <span>A</span>penix
+    </p>
     <div class="search">
       <input type="text">
       <div class="img-bg">
         <img src="./assets/img/search.png">
       </div>
     </div>
-    <p class="login">Войти</p>
+    <p class="auth" routerLink="/login" [ngClass]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
+    <p class="auth" routerLink="/registration" [ngClass]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
   </div>
   <div class="menu">
     <p>Для дошкольников</p>

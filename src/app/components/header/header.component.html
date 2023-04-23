@@ -1,6 +1,6 @@
 <div class="header">
   <div class="header-content">
-    <p routerLink="/" [class]="['logo', currentRoute === '/' ? 'cursor-default': '']">
+    <p routerLink="/" [ngClass]="['logo', currentRoute === '/' ? 'cursor-default': '']">
       <span>A</span>penix
     </p>
     <div class="search">
@@ -9,8 +9,8 @@
         <img src="./assets/img/search.png">
       </div>
     </div>
-    <p class="auth" routerLink="/login" [class]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
-    <p class="auth" routerLink="/registration" [class]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
+    <p class="auth" routerLink="/login" [ngClass]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
+    <p class="auth" routerLink="/registration" [ngClass]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
   </div>
   <div class="menu">
     <p>Для дошкольников</p>

@@ -12,7 +12,7 @@
     <p class="auth" routerLink="/login" [ngClass]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
     <p class="auth" routerLink="/registration" [ngClass]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
   </div>
-  <div class="menu">
+  <div [ngClass]="['menu', currentRoute === '/' ? '' : 'hidden']">
     <div class="preschool">
       <p>Для дошкольников</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="PreSchoolContent">
@@ -87,7 +87,7 @@
         </div>
       </div>
      </div>
-  
+
     <div class="student">
       <p>Для студентов</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="StudentContent">

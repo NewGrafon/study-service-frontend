@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AccountProfileComponent } from './pages/account-profile/account-profile.component';
 import { TeacherCardComponent } from './components/teacher-card/teacher-card.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TeacherCardComponent } from './components/teacher-card/teacher-card.com
     FooterComponent,
     HomeComponent,
     AccountProfileComponent,
-    TeacherCardComponent
+    TeacherCardComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

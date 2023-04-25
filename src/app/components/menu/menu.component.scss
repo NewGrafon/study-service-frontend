@@ -1,0 +1,116 @@
+.menu {
+    position: absolute;
+    width: 40%;
+    height: 60px;
+    background-color: #e7a83c;
+    top: 80px;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 1px 40px -10px #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 24px;
+    color: white;
+  }
+
+
+  
+.popUp {
+    display: flex;
+    width: 520px;
+    height: 400px;
+    color: white;
+    background-color: #fff;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto;
+    justify-content: space-around;
+  }
+  
+  
+  .item{
+    width: 200px;
+    height: 40px;
+    background-color: #e7a83c;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .arrow{
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    transition: 0.3s;
+  }
+  
+  .student:hover .arrow,
+  .school:hover .arrow,
+  .preschool:hover .arrow{
+    transform: rotate(180deg);
+  }
+  
+  .preschool,
+  .school,
+  .student{
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .preschool:hover .PreSchoolContent,
+  .school:hover .SchoolContent,
+  .student:hover .StudentContent{
+    display: block;
+    cursor: default;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transition: 0.3s;
+  }
+  
+  
+  .PreSchoolContent {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition-property: opacity, visibility;
+    transition-duration: .3s, 0s;
+    transition-delay: 0s, .3s;
+    left: 0;
+    top: 62px;
+  }
+  
+  .SchoolContent {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition-property: opacity, visibility;
+    transition-duration: .3s, 0s;
+    transition-delay: 0s, .3s;
+    left: calc(50% - 260px);
+    top: 62px;
+  }
+  
+  .StudentContent {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition-property: opacity, visibility;
+    transition-duration: .3s, 0s;
+    transition-delay: 0s, .3s;
+    right: 0;
+    top: 62px;
+  }

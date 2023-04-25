@@ -1,6 +1,6 @@
-<div class="footer">
+<div [ngClass]="['footer', acceptedRoutes.includes(currentRoute) ? '' : 'hidden']">
     <div class="footer-conteiner">
-        <div class="info">
+        <div class="info" routerLink="/" routerLinkActive="cursor-default" [routerLinkActiveOptions]="{ exact: true }">
             <img src="./assets/img/logo.png">
             <p style="font-size: 46px; color: white; line-height: 54px;"><span style="color: #e7a83c;">A</span>penix</p>
             <p style="color: #a8a8a8; font-size: 16px;">Copyright © 2023</p>

@@ -24,6 +24,5 @@ export class HeaderComponent {
         console.log(event.error);
       }
     });
-
   }
 }

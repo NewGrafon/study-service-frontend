@@ -1,5 +1,6 @@
 .menu {
     position: absolute;
+    left: 30%;
     width: 40%;
     height: 60px;
     background-color: #e7a83c;
@@ -15,7 +16,7 @@
   }
 
 
-  
+
 .popUp {
     display: flex;
     width: 520px;
@@ -28,8 +29,8 @@
     overflow-y: auto;
     justify-content: space-around;
   }
-  
-  
+
+
   .item{
     width: 200px;
     height: 40px;
@@ -42,20 +43,20 @@
     justify-content: center;
     margin: 10px;
   }
-  
+
   .arrow{
     width: 16px;
     height: 16px;
     margin-left: 8px;
     transition: 0.3s;
   }
-  
+
   .student:hover .arrow,
   .school:hover .arrow,
   .preschool:hover .arrow{
     transform: rotate(180deg);
   }
-  
+
   .preschool,
   .school,
   .student{
@@ -66,7 +67,7 @@
     cursor: pointer;
     align-items: center;
   }
-  
+
   .preschool:hover .PreSchoolContent,
   .school:hover .SchoolContent,
   .student:hover .StudentContent{
@@ -77,8 +78,8 @@
     z-index: 1;
     transition: 0.3s;
   }
-  
-  
+
+
   .PreSchoolContent {
     position: absolute;
     visibility: hidden;
@@ -90,7 +91,7 @@
     left: 0;
     top: 62px;
   }
-  
+
   .SchoolContent {
     position: absolute;
     visibility: hidden;
@@ -102,7 +103,7 @@
     left: calc(50% - 260px);
     top: 62px;
   }
-  
+
   .StudentContent {
     position: absolute;
     visibility: hidden;

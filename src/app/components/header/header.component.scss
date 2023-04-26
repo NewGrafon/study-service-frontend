@@ -36,6 +36,8 @@
   span {
     color: #e7a83c;
   }
+  user-select: none;
+  cursor: pointer;
 }
 
 .auth {
@@ -43,6 +45,13 @@
   text-align: right;
   font-size: 24px;
   cursor: pointer;
+  user-select: none;
+  transition: 0.15s;
+}
+
+.auth:hover{
+  color: #e7a83c;
+  
 }
 
 

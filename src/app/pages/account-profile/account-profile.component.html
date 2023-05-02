@@ -1,9 +1,9 @@
 
 
 <div class="conteiner">
-    <div class="popup-bg">
+    <div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
         <div class="popUpteacher">
-            <div class="closePopup">X</div>
+            <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
             <p>Образование</p>
             <input type="text">
             <p>Место обучения</p>
@@ -67,7 +67,7 @@
             <button>Выход</button>
         </div>
         <div class="be-teacher">
-            Заполните&nbsp; <span class="openPopup">форму</span> &nbsp;и станьте проподавателем.
+            Заполните&nbsp; <span class="openPopup" onclick="openPopup('popUpteacher', 'popup-bg')">форму</span> &nbsp;и станьте проподавателем.
         </div>
     </div>
     <div>
@@ -232,5 +232,3 @@
     </div>
     <div class="past-lessions"></div>
 </div>
-
-<script type="text/javascript" src="./assets/scripts/working.js"></script>

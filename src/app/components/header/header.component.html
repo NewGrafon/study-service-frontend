@@ -9,8 +9,16 @@
         <img src="./assets/img/search.png">
       </div>
     </div>
-    <p class="auth" routerLink="/login" [ngClass]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
-    <p class="auth" routerLink="/registration" [ngClass]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
+
+    <div *ngIf="isLogged; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock >
+      <p class="auth" routerLink="/profile">Профиль</p>
+    </ng-template>
+    <ng-template #elseBlock >
+      <p class="auth" routerLink="/login" [ngClass]="[currentRoute === '/login' ? 'hidden' : '']">Войти</p>
+      <p class="auth" routerLink="/registration" [ngClass]="[currentRoute === '/login' ? '' : 'hidden']">Регистрация</p>
+    </ng-template>
+
   </div>
   <app-menu></app-menu>
 </div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
+import {Component} from '@angular/core';
+import {Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,21 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@
 })
 export class HeaderComponent {
   currentRoute: string;
+  isLogged: boolean = false;
 
   constructor(private router: Router) {
+
+    fetch(`${environment.apiUrl}/is_authenticated`)
+      .then((response) => {
+        response.json().then(result => this.isLogged = result.result === 'true' || result.result === true)
+      })
+      .catch((e) => {
+        console.error(e);
+      })
+      .finally(() => {
+        console.log('раз-раз!')
+      });
+
     this.currentRoute = "/";
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {

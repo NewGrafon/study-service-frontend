@@ -33,7 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "./assets/scripts/popup.js"
+              "src/assets/scripts/popup.js"
             ]
           },
           "configurations": {

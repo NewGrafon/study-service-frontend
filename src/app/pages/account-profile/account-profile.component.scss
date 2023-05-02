@@ -181,21 +181,22 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.5s all;
-    z-index: 214124;
+    z-index: 200;
 }
 
 .active{
-    opacity: 1;
+    opacity: 1 !important;
     pointer-events: all;
     transition: 0.5s all;
 }
 
 .popUpteacher {
-    position: absolute;
+    opacity: 0;
+    position: fixed;
     width: 400px;
     height: 600px;
     background-color: #ffffff;
-    z-index: 1;
+    z-index: 201;
     left: calc(50% - 200px);
     top: calc(50% - 300px);
     border-radius: 10px;
@@ -279,7 +280,7 @@ input[type=text]:focus {
 
 
 
-.close{ 
+.closePopup{ 
     position: absolute;
     top: 5px;
     right: 10px;
@@ -296,7 +297,7 @@ input[type=text]:focus {
     transition: 0.12s;
  }
 
- .close:hover{
+ .closePopup:hover{
     color: #e7a83c;
  }
 

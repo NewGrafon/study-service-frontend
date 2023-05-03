@@ -1,15 +1,16 @@
-
-
-<div class="login">
-    <h1>Вход</h1>
+  <div class="login">
+    <h1 [class]="message === '' ? null : 'message'">{{ message || 'Вход' }}</h1>
     <div>
-        <p>Email</p>
-        <input>
+      <p>Email</p>
+      <input #email name="email">
     </div>
     <div>
-        <p>Пароль</p>
-        <input>
+      <p>Пароль</p>
+      <input #pass name="password">
     </div>
-    <button><p>Войти</p></button>
+    <button type="button" (click)="tryEnter(email, pass)">
+      <p>Войти</p>
+    </button>
+  </div>
 
-</div>
+

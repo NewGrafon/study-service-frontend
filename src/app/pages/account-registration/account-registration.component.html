@@ -1,26 +1,30 @@
-
 <div class="login">
-    <h1>Вход</h1>
-    <div>
-        <p>Имя</p>
-        <input>
-    </div>
-    <div>
-        <p>Фамилия</p>
-        <input>
-    </div>
-    <div>
-        <p>Email</p>
-        <input>
-    </div>
-    <div>
-        <p>Пароль</p>
-        <input>
-    </div>
-    <div>
-        <p>Подтвердите пароль</p>
-        <input>
-    </div>
-    <button><p>Зарегистрироваться</p></button>
+  <h1>Вход</h1>
+  <div>
+    <p>Имя</p>
+    <input #fname name="firstname">
+  </div>
+  <div>
+    <p>Фамилия</p>
+    <input #lname name="lastname">
+  </div>
+  <div>
+    <p>Email</p>
+    <input #email name="email">
+  </div>
+  <div>
+    <p>Пароль</p>
+    <input #pass name="password">
+  </div>
+  <div>
+    <p>Подтвердите пароль</p>
+    <input (input)="checkPassword(pass.value, rpass.value) ? rpass.classList.remove('red-outline') : rpass.classList.add('red-outline')"
+      #rpass id="repeatPassword">
+  </div>
+
+  <button
+    (click)="tryRegister(fname.value, lname.value, email.value, pass.value, rpass.value)">
+    <p>Зарегистрироваться</p>
+  </button>
 
 </div>

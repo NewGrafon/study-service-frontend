@@ -1,54 +1,63 @@
 .login {
-    position: absolute;
-    width: 500px;
-    height: auto;
-    background-color: white;
-    left: calc(50% - 250px);
-    top: 200px;
-    border: 2px solid #e7a83c;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    div{
-        margin-top: 20px;
-    }
-    
-}
+  position: absolute;
+  width: 500px;
+  height: auto;
+  background-color: white;
+  left: calc(50% - 250px);
+  top: 200px;
+  border: 2px solid #e7a83c;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-
-h1{
+  div {
     margin-top: 20px;
-    font-size: 44px;
-    line-height: 44px;
+  }
+
 }
 
-input{
-    outline: 1px solid #e7a83c;
-    border-radius: 4px;
-    width: 240px;
-    height: 32px;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: 18px;   
+
+h1 {
+  margin-top: 20px;
+  font-size: 44px;
+  line-height: 44px;
+
+
 }
 
-button{
-    margin-top: 40px;
-    border-radius: 10px;
-    border: 1px solid #bbbbbb;
-    width: auto;
-    height: 44px;
-    padding-left: 22px;
-    padding-right: 22px;
-    transition: 0.1s;
-    font-size: 20px;
-    margin-bottom: 20px;
+.message {
+  font-size: 22px;
+  line-height: 22px;
+  color: red;
 }
 
-button:hover{
-    border: 1px solid #e7a83c;
-    background-color: #e7a83c;
-    color: white;
+input {
+  outline: 1px solid #e7a83c;
+  border-radius: 4px;
+  width: 240px;
+  height: 32px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1px solid #bbbbbb;
+  width: auto;
+  height: 44px;
+  padding-left: 22px;
+  padding-right: 22px;
+  transition: 0.1s;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  border: 1px solid #e7a83c;
+  background-color: #e7a83c;
+  color: white;
 }
 

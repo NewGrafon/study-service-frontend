@@ -1,6 +1,6 @@
 <div class="conteiner">
     <div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
-       
+
     </div>
     <div class="popUpteacher">
         <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
@@ -43,29 +43,25 @@
                 <img src="./assets/img/bekit.png">
             </div>
             <div class="shortInfo">
-                <p>Никита Безруков</p>
+                <p>{{ user?.firstname }} {{ user?.lastname }}</p>
                 <p>Ученик</p>
             </div>
             <div class="mainInfo">
 
                 <div class="title">
                     <p>Почта</p>
-                    <p>Телефон</p>
-                    <p>Пароль</p>
                     <p>Тип</p>
                     <p>Дата регистрации</p>
 
                 </div>
 
                 <div class="info">
-                    <p>pochta@mail.ru</p>
-                    <p>+7 000 000 00 00</p>
-                    <p>**********</p>
-                    <p>Школьник</p>
-                    <p>26.04.2077</p>
+                    <p>{{ user?.email }}</p>
+                    <p>{{ accountType }}</p>
+                    <p>{{ user?.created }}</p>
                 </div>
             </div>
-            <button>Выход</button>
+            <button (click)="logout()">Выход</button>
         </div>
         <div class="be-teacher">
             Заполните&nbsp; <span class="openPopup" onclick="openPopup('popUpteacher', 'popup-bg')">форму</span> &nbsp;и

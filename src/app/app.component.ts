@@ -36,7 +36,7 @@ export class AppComponent {
 
         const response = await fetch('/api/get_account_info');
         const user = await response.json();
-        if (user.error !== undefined) {
+        if (response.ok && user.error !== undefined) {
           UpdateUser({
             logged: false,
             firstname: null,

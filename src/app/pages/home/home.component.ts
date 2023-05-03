@@ -11,7 +11,6 @@ export class HomeComponent {
 
 interface IRepetitor {
   firstname: string,
-  middlename: string,
   lastname: string,
 
 }

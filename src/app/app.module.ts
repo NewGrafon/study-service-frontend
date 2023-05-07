@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AccountProfileComponent } from './pages/account-profile/account-profile.component';
 import { TeacherCardComponent } from './components/teacher-card/teacher-card.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ModerationComponent } from './pages/moderation/moderation.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MenuComponent } from './components/menu/menu.component';
     HomeComponent,
     AccountProfileComponent,
     TeacherCardComponent,
-    MenuComponent
+    MenuComponent,
+    ModerationComponent
   ],
   imports: [
     BrowserModule,

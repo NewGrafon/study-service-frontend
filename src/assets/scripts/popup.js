@@ -1,19 +1,19 @@
-function openPopup(popupClassName = '', popupBGName = '') {
-  if (popupClassName === '' || popupBGName === '') {
-    console.error("Не указано чета")
+function openPopup(popupClassName = '', popupBGClassName = '') {
+  if (popupClassName === '' || popupBGClassName === '') {
+    console.error("Не указано чета");
   }
 
-  document.querySelector(`.${popupClassName}`).classList.add('active')
-  document.querySelector(`.${popupBGName}`).classList.add('active')
+  document.querySelector(`.${popupClassName}`).classList.add('active');
+  document.querySelector(`.${popupBGClassName}`).classList.add('active');
 }
 
-function closePopup(popupClassName = '', popupBGName = '') {
-  if (popupClassName === '' || popupBGName === '') {
-    console.error("Не указано чета")
+function closePopup(popupClassName = '', popupBGClassName = '') {
+  if (popupClassName === '' || popupBGClassName === '') {
+    console.error("Не указано чета");
   }
 
-  document.querySelector(`.${popupClassName}`).classList.remove('active')
-  document.querySelector(`.${popupBGName}`).classList.remove('active')
+  document.querySelector(`.${popupClassName}`).classList.remove('active');
+  document.querySelector(`.${popupBGClassName}`).classList.remove('active');
 }
 
 

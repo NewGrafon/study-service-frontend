@@ -1,238 +1,240 @@
 <div class="conteiner">
-    <div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
+  <div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
 
-    </div>
+  </div>
+  <form action="/teacher_send_form" method="POST">
     <div class="popUpteacher">
-        <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
-        <p>Образование</p>
-        <input type="text">
-        <p>Место обучения</p>
-        <input type="text">
-        <p>Стаж работы</p>
-        <input type="text">
-        <p>Кому преподавать</p>
-        <div class="checkbox"><input type="checkbox" value="Дошкольники">
-            <p>Дошкольники</p>
+      <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
+      <p>Образование</p>
+      <input name="education" type="text" required>
+      <p>Место обучения</p>
+      <input name="educationPlace" type="text" required>
+      <p>Стаж работы</p>
+      <input name="workExperience" type="text" required>
+      <p>Кому преподавать</p>
+      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Дошкольники">
+        <p>Дошкольники</p>
+      </div>
+      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.1-4">
+        <p>Школьники (1-4 классы)</p>
+      </div>
+      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.5-9">
+        <p>Школьники (5-9 классы)</p>
+      </div>
+      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.10-11">
+        <p>Школьники (10-11 классы)</p>
+      </div>
+      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Студенты">
+        <p>Студенты</p>
+      </div>
+      <p>Преподаваемые предметы</p>
+      <div class="lessionsCB">
+        <div><input type="checkbox" value="Студенты">
+          <p>География</p>
         </div>
-        <div class="checkbox"><input type="checkbox" value="Школьники">
-            <p>Школьники (1-4 классы)</p>
+        <div><input type="checkbox" value="Студенты">
+          <p>География</p>
         </div>
-        <div class="checkbox"><input type="checkbox" value="Школьники">
-            <p>Школьники (5-9 классы)</p>
+        <div><input type="checkbox" value="Студенты">
+          <p>География</p>
         </div>
-        <div class="checkbox"><input type="checkbox" value="Школьники">
-            <p>Школьники (10-11 классы)</p>
+        <div><input type="checkbox" value="Студенты">
+          <p>География</p>
         </div>
-        <div class="checkbox"><input type="checkbox" value="Студенты">
-            <p>Студенты</p>
-        </div>
-        <p>Преподаваемые предметы</p>
-        <div class="lessionsCB">
-            <div><input type="checkbox" value="Студенты">
-                <p>География</p>
-            </div>
-            <div><input type="checkbox" value="Студенты">
-                <p>География</p>
-            </div>
-            <div><input type="checkbox" value="Студенты">
-                <p>География</p>
-            </div>
-            <div><input type="checkbox" value="Студенты">
-                <p>География</p>
-            </div>
-        </div>
-        <button>Стать учителем</button>
+      </div>
+      <button>Стать учителем</button>
     </div>
-    <div>
-        <div class="userinfo">
-            <div class="profileImg">
-                <img src="./assets/img/bekit.png">
-            </div>
-            <div class="shortInfo">
-                <p>{{ user?.firstname }} {{ user?.lastname }}</p>
-                <p>Ученик</p>
-            </div>
-            <div class="mainInfo">
+  </form>
+  <div>
+    <div class="userinfo">
+      <div class="profileImg">
+        <img src="./assets/img/bekit.png">
+      </div>
+      <div class="shortInfo">
+        <p>{{ user?.firstname }} {{ user?.lastname }}</p>
+        <p>Ученик</p>
+      </div>
+      <div class="mainInfo">
 
-                <div class="title">
-                    <p>Почта</p>
-                    <p>Тип</p>
-                    <p>Дата регистрации</p>
+        <div class="title">
+          <p>Почта</p>
+          <p>Тип</p>
+          <p>Дата регистрации</p>
 
-                </div>
-
-                <div class="info">
-                    <p>{{ user?.email }}</p>
-                    <p>{{ accountType }}</p>
-                    <p>{{ user?.created }}</p>
-                </div>
-            </div>
-            <button (click)="logout()">Выход</button>
         </div>
-        <div class="be-teacher">
-            Заполните&nbsp; <span class="openPopup" onclick="openPopup('popUpteacher', 'popup-bg')">форму</span> &nbsp;и
-            станьте проподавателем.
+
+        <div class="info">
+          <p>{{ user?.email }}</p>
+          <p>{{ accountType }}</p>
+          <p>{{ user?.created }}</p>
         </div>
+      </div>
+      <button (click)="logout()">Выход</button>
     </div>
-    <div>
-        <div class="futureLessions">
-            <p class="fl">Назначенные уроки</p>
-            <div class="lessionConteiner">
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Два</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Три</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Четыре</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Бекит Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Бекит Ученик Два</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="pastLessions">
-            <p class="fl">Прошедшие уроки</p>
-            <div class="lessionConteiner">
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-                <div class="lession">
-                    <div class="lession-name">
-                        <p style="color:#e7a83c; font-size: 22px;">География</p>
-                        <p>19:00</p>
-                    </div>
-                    <div class="lession-info">
-                        <p>Ученик Один</p>
-                        <p>4 класс</p>
-                        <p>2 часа</p>
-                        <p>600 р.</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
+    <div class="be-teacher">
+      Заполните&nbsp; <span class="openPopup" onclick="openPopup('popUpteacher', 'popup-bg')">форму</span> &nbsp;и
+      станьте проподавателем.
     </div>
-    <div class="past-lessions"></div>
+  </div>
+  <div>
+    <div class="futureLessions">
+      <p class="fl">Назначенные уроки</p>
+      <div class="lessionConteiner">
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Два</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Три</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Четыре</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Бекит Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Бекит Ученик Два</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="pastLessions">
+      <p class="fl">Прошедшие уроки</p>
+      <div class="lessionConteiner">
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+        <div class="lession">
+          <div class="lession-name">
+            <p style="color:#e7a83c; font-size: 22px;">География</p>
+            <p>19:00</p>
+          </div>
+          <div class="lession-info">
+            <p>Ученик Один</p>
+            <p>4 класс</p>
+            <p>2 часа</p>
+            <p>600 р.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="past-lessions"></div>
 </div>

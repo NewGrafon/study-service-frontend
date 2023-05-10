@@ -29,15 +29,18 @@
     position: absolute;
     border-radius: 14px;
     z-index: 9;
+    transition: 0.2s;
   }
 }
 
+
+
 .left {
-  left: 0;
+  transform: translate(-100px);
 }
 
 .right {
-  right: 0;
+    transform: translate(+100px);
 }
 
 .choose {
@@ -50,7 +53,6 @@
   color: white;
   z-index: 10;
 }
-
 
 .list {
   position: relative;

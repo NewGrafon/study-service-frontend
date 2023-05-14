@@ -174,6 +174,25 @@
     }
 }
 
+.moderation{
+    width: 430px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #e7a83c;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.1s;
+
+    p:hover{
+        text-decoration: underline #e7a83c;
+    }
+}
+
 //начало попапы
 
 

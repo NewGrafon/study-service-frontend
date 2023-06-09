@@ -12,7 +12,7 @@
   margin: 15px;
   width: 270px;
   height: 261px;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 .info {
@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
+  border-radius: 8px;
   color: black;
   transition: 0.2s;
   cursor: pointer;
@@ -92,9 +92,12 @@
 
 .discription{
   font-size: 30px;
-  max-height: 180px;
+  height: 180px;
   overflow-y:auto;
   max-width: 900px;
   word-break: break-all;
-  line-height: 32px;
+
+  p{
+    line-height: 30px;
+  }
 }

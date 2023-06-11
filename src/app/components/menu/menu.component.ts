@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {Event, NavigationEnd, NavigationError, NavigationStart, Router} from "@angular/router";
+import {Component, Pipe, PipeTransform} from '@angular/core';
+import {Event, NavigationEnd, Router} from "@angular/router";
+import {EducatablePeoples, schoolars, students, StudyLinks, underSchoolars} from "../../GlobalVariables";
 
 @Component({
   selector: 'app-menu',
@@ -13,17 +14,31 @@ export class MenuComponent {
   constructor(private router: Router) {
     this.currentRoute = "/";
     this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) {
-
-      }
-
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
       }
-
-      if (event instanceof NavigationError) {
-        console.log(event.error);
-      }
     });
+  }
+
+  protected readonly StudyLinks = StudyLinks;
+  protected readonly EducatablePeoples = EducatablePeoples;
+  protected readonly underSchoolars = underSchoolars;
+  protected readonly schoolars = schoolars;
+  protected readonly students = students;
+}
+
+@Pipe({
+  name: 'IncludesEducatablePeoples'
+})
+export class IncludesEducatablePeoples implements PipeTransform {
+  transform(educatablePeoples: EducatablePeoples[], args: EducatablePeoples[] = [EducatablePeoples.Дошкольники]): boolean {
+    let result: boolean = false;
+    args.forEach((arg_people: EducatablePeoples) => {
+      if (educatablePeoples.includes(arg_people))
+        result = true;
+        return;
+    })
+
+    return result;
   }
 }

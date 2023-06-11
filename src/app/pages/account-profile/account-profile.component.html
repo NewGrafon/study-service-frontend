@@ -1,50 +1,5 @@
 <div class="conteiner">
-  <div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
-
-  </div>
-  <form action="/teacher_send_form" method="POST">
-    <div class="popUpteacher">
-      <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
-      <p>Образование</p>
-      <input name="education" type="text" required>
-      <p>Место обучения</p>
-      <input name="educationPlace" type="text" required>
-      <p>Стаж работы</p>
-      <input name="workExperience" type="text" required>
-      <p>Кому преподавать</p>
-      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Дошкольники">
-        <p>Дошкольники</p>
-      </div>
-      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.1-4">
-        <p>Школьники (1-4 классы)</p>
-      </div>
-      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.5-9">
-        <p>Школьники (5-9 классы)</p>
-      </div>
-      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Школьники.10-11">
-        <p>Школьники (10-11 классы)</p>
-      </div>
-      <div class="checkbox"><input name="canEducatePeoples" type="checkbox" value="Студенты">
-        <p>Студенты</p>
-      </div>
-      <p>Преподаваемые предметы</p>
-      <div class="lessionsCB">
-        <div><input type="checkbox" value="Студенты">
-          <p>География</p>
-        </div>
-        <div><input type="checkbox" value="Студенты">
-          <p>География</p>
-        </div>
-        <div><input type="checkbox" value="Студенты">
-          <p>География</p>
-        </div>
-        <div><input type="checkbox" value="Студенты">
-          <p>География</p>
-        </div>
-      </div>
-      <button>Стать учителем</button>
-    </div>
-  </form>
+<app-teacher-form></app-teacher-form>
   <div>
     <div class="userinfo">
       <div class="profileImg">

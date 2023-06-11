@@ -1,0 +1,31 @@
+<div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
+
+</div>
+<form name="teacher-form" action="/teacher_send_form" method="POST">
+  <div class="popUpteacher">
+    <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
+    <p>Образование</p>
+    <input name="education" type="text" required>
+    <p>Место обучения</p>
+    <input name="educationPlace" type="text" required>
+    <p>Стаж работы</p>
+    <input name="workExperience" type="text" required>
+    <p>Кому преподавать</p>
+    <ng-container *ngFor="let people of EducatablePeoples | keyvalue">
+      <label class="checkbox">
+        <input name="canEducatePeoples" type="checkbox" value="{{ people.value }}" (change)="selectedEducatedPeoplesChange()">
+        <p>{{ people.value }}</p>
+      </label>
+    </ng-container>
+    <p>Преподаваемые предметы</p>
+    <div class="lessionsCB">
+    <ng-container *ngFor="let sLink of StudyLinks">
+      <label *ngIf="sLink.availablePeoples | IncludesEducatablePeoples : selectedEducatedPeoples">
+        <input name="studyWays" type="checkbox" value="{{ sLink.studyWay }}">
+        <p>{{ sLink.studyWay }}</p>
+      </label>
+    </ng-container>
+    </div>
+    <button type="button" (click)="trySendForm()">Стать учителем</button>
+  </div>
+</form>

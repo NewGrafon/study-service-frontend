@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {Router} from "@angular/router";
-import {userInfo} from "../../GlobalVariables";
+import { Component } from '@angular/core';
+import { Router } from "@angular/router";
+import { EducatablePeoples, userInfo } from "../../GlobalVariables";
 import { OnInit } from "@angular/core";
-import {AppComponent} from "../../app.component";
+import { AppComponent } from "../../app.component";
 
 @Component({
   selector: 'app-account-profile',
@@ -58,4 +58,6 @@ export class AccountProfileComponent implements OnInit {
   }
 
   constructor(private router: Router) {}
+
+  protected readonly EducatablePeoples = EducatablePeoples;
 }

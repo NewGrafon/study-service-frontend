@@ -3,24 +3,11 @@
       <p>Для дошкольников</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="PreSchoolContent">
         <div class="popUp">
-          <div class="item">
-            <p>Математика</p>
+        <ng-container *ngFor="let sLink of StudyLinks;">
+          <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: underSchoolars">
+            <p>{{ sLink.studyWay }}</p>
           </div>
-          <div class="item">
-            <p>Грамота</p>
-          </div>
-          <div class="item">
-            <p>Рисование</p>
-          </div>
-          <div class="item">
-            <p>Литература</p>
-          </div>
-          <div class="item">
-            <p>Окружающий мир</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
+        </ng-container>
         </div>
       </div>
     </div>
@@ -28,48 +15,11 @@
       <p>Для школьников</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="SchoolContent">
         <div class="popUp">
-          <div class="item">
-            <p>Математика</p>
-          </div>
-          <div class="item">
-            <p>Грамота</p>
-          </div>
-          <div class="item">
-            <p>Рисование</p>
-          </div>
-          <div class="item">
-            <p>Литература</p>
-          </div>
-          <div class="item">
-            <p>Окружающий мир</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
+          <ng-container *ngFor="let sLink of StudyLinks;">
+            <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: schoolars">
+              <p>{{ sLink.studyWay }}</p>
+            </div>
+          </ng-container>
         </div>
       </div>
      </div>
@@ -78,24 +28,11 @@
       <p>Для студентов</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="StudentContent">
         <div class="popUp">
-          <div class="item">
-            <p>Математика</p>
-          </div>
-          <div class="item">
-            <p>Грамота</p>
-          </div>
-          <div class="item">
-            <p>Рисование</p>
-          </div>
-          <div class="item">
-            <p>Литература</p>
-          </div>
-          <div class="item">
-            <p>Окружающий мир</p>
-          </div>
-          <div class="item">
-            <p>Логопед</p>
-          </div>
+          <ng-container *ngFor="let sLink of StudyLinks;">
+            <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: students">
+              <p>{{ sLink.studyWay }}</p>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>

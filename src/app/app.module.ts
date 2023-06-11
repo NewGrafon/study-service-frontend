@@ -10,8 +10,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AccountProfileComponent } from './pages/account-profile/account-profile.component';
 import { TeacherCardComponent } from './components/teacher-card/teacher-card.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { IncludesEducatablePeoples, MenuComponent } from './components/menu/menu.component';
 import { ModerationComponent } from './pages/moderation/moderation.component';
+import { TeacherFormComponent } from './components/teacher-form/teacher-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { ModerationComponent } from './pages/moderation/moderation.component';
     AccountProfileComponent,
     TeacherCardComponent,
     MenuComponent,
-    ModerationComponent
+    ModerationComponent,
+    IncludesEducatablePeoples,
+    TeacherFormComponent
   ],
   imports: [
     BrowserModule,

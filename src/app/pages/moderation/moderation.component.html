@@ -4,10 +4,6 @@
   <p id="edit" #edit class="choose" (click)="changeType(edit)">Изменения</p>
 </div>
 
-<div class="list" *ngFor="let item of listContent; index as i; first as isFirst">
-  <div class="item">
-    <p style="color: #e7a83c; font-size: 22px;">{{ item.creator.firstname }} {{ item.creator.lastname }}</p>
-    <p>Время заявки: {{ item.creationDate }}</p>
-    <p>Дата заявки: {{ item.creationDate }}</p>
-  </div>
+<div class="list" *ngFor="let item of ModerationComponent.listContent;">
+  <app-moderation-item [item]="item"></app-moderation-item>
 </div>

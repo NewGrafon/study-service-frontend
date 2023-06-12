@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {environment} from "../../../environments/environment";
 import {Router} from "@angular/router";
-import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
+import {PopupSystemComponent} from "../../components/popup-system/popup-system.component";
 
 @Component({
   selector: 'app-account-registration',
@@ -40,12 +39,12 @@ export class AccountRegistrationComponent {
     let result = await response.json();
 
     if (result.result === true) {
-      console.log('Регистрация произошла успешно');
       await this.router.navigateByUrl(`/login`);
+      PopupSystemComponent.SendMessage('Регистрация произошла успешно!');
     } else if (result.exist) {
-      console.log('Аккаунт с данным email уже существует!');
+      PopupSystemComponent.SendMessage('Аккаунт с данным email уже существует!');
     } else {
-      console.error(result);
+      PopupSystemComponent.SendMessage('Произошла неизвестная ошибка, попробуйте еще раз.');
     }
 
   }

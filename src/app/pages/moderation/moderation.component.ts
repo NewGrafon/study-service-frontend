@@ -7,25 +7,13 @@ import {Component} from '@angular/core';
 })
 export class ModerationComponent {
 
-  listContent: IItem[] = [
-    {
-      creationDate: '21.21.21',
-      creator: {
-        _id: '',
-        firstname: 'aboba',
-        lastname: 'biba',
-      },
-      requestInfo: {
-        education: '',
-        educationPlace: '',
-        workExperience: '',
-        canEducatePeoples: [],
-        educateDirections: []
-      }
-    }
-  ];
+  static listContent: IItem[] = [];
 
-  async changeType(elem: any) {
+  static deleteItem(_id: string): void {
+    this.listContent = this.listContent.filter(item => item.creator._id !== _id);
+  }
+
+  async changeType(elem: any): Promise<void> {
 
     document.querySelectorAll('.choose')
       .forEach(arrElem => {
@@ -46,17 +34,35 @@ export class ModerationComponent {
 
     const url = type === 'new' ? '/api/get_new_teachers' : '/api/get_wanna_edit_teachers';
 
-    // const response = await fetch(url);
-    // const result = await response.json();
-    //
-    // if (result.length > 0) {
-    //   this.listContent = result;
-    // }
+    const response = await fetch(url);
+    const result = await response.json();
+
+    ModerationComponent.listContent = result.map((item: any) => {
+      item.created = new Date(item.created).toLocaleDateString('ru-RU');
+      return item;
+    });
   }
+
+  constructor() {
+    const url = '/api/get_new_teachers';
+
+    fetch(url)
+      .then((result) => {
+        result.json()
+          .then(jresult => {
+            ModerationComponent.listContent = jresult.map((item: any) => {
+              item.created = new Date(item.created).toLocaleDateString('ru-RU');
+              return item;
+            });
+          })
+      });
+  }
+
+  protected readonly ModerationComponent = ModerationComponent;
 }
 
-interface IItem {
-  creationDate: string,
+export interface IItem {
+  created: Date,
   creator: {
     _id: string,
     firstname: string,

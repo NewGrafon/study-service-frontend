@@ -38,15 +38,14 @@ export class AppComponent {
         const user = await response.json();
         if (response.ok && user.error !== undefined) {
           UpdateUser({
-            logged: false,
             firstname: null,
             lastname: null,
             email: null,
-            accountType: null,
+            accountType: 0,
             created: null,
-          });
+          }, false);
         } else {
-          UpdateUser(user);
+          UpdateUser(user, true);
         }
 
         for (const cb of AppComponent.cbAfterUpdateUser) {

@@ -1,9 +1,15 @@
 export let isLogged: boolean = false;
 
-export let userInfo: any = null;
+export let userInfo: IUserSchema = {
+  firstname: null,
+  lastname: null,
+  email: null,
+  accountType: 0,
+  created: null
+};
 
-export function UpdateUser(newInfo: any) {
-  isLogged = newInfo.logged;
+export function UpdateUser(newInfo: IUserSchema, _isLogged: boolean) {
+  isLogged = _isLogged;
   userInfo = {
     firstname: newInfo.firstname,
     lastname: newInfo.lastname,
@@ -11,6 +17,14 @@ export function UpdateUser(newInfo: any) {
     accountType: newInfo.accountType,
     created: newInfo.created,
   }
+}
+
+export interface IUserSchema {
+  firstname: string | null,
+  lastname: string | null,
+  email: string | null,
+  accountType: number,
+  created: string | null
 }
 
 export enum EducatablePeoples {

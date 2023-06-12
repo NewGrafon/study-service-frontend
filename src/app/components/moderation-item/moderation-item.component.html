@@ -1,0 +1,12 @@
+<div class="item" (click)="openRequest()">
+  <p style="color: #e7a83c; font-size: 22px;">{{ item?.creator?.firstname }} <br> {{ item?.creator?.lastname }}</p>
+  <p>Дата заявки: {{ item?.created }}</p>
+</div>
+<div class="hidden item-form" id="{{ _id }}">
+  <div class="bg" (click)="closeRequest()"></div>
+  <div class="content">
+    <div (click)="closeRequest()">X</div>
+    <button (click)="touchRequest(TouchType.accept)">Одобрить</button>
+    <button (click)="touchRequest(TouchType.reject)">Отклонить</button>
+  </div>
+</div>

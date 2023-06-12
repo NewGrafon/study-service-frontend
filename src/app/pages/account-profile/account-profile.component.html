@@ -6,33 +6,33 @@
         <img src="./assets/img/bekit.png">
       </div>
       <div class="shortInfo">
-        <p>{{ user?.firstname }} {{ user?.lastname }}</p>
-        <p>Ученик</p>
+        <p>{{ user.firstname }} {{ user.lastname }}</p>
+        <p>{{ accountType }}</p>
       </div>
       <div class="mainInfo">
 
         <div class="title">
           <p>Почта</p>
-          <p>Тип</p>
           <p>Дата регистрации</p>
 
         </div>
 
         <div class="info">
-          <p>{{ user?.email }}</p>
-          <p>{{ accountType }}</p>
-          <p>{{ user?.created }}</p>
+          <p>{{ user.email }}</p>
+          <p>{{ user.created }}</p>
         </div>
       </div>
       <button (click)="logout()">Выход</button>
     </div>
     <div class="be-teacher">
-      <p>Заполните <span class="openPopup" onclick="openPopup('popUpteacher', 'popup-bg')">форму</span> и
+      <p>Заполните <span class="openPopup" (click)="TeacherFormComponent.Instance.openForm()">форму</span> и
       станьте проподавателем.</p>
     </div>
-    <div  class="moderation">
-      <p routerLink="/moderation"> Страница модерации</p>
-    </div>
+    <ng-container *ngIf="user.accountType >= 2">
+      <div class="moderation">
+        <p routerLink="/moderation"> Страница модерации</p>
+      </div>
+    </ng-container>
   </div>
   <div>
     <div class="futureLessions">

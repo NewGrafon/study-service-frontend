@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { EducatablePeoples, userInfo } from "../../GlobalVariables";
-import { OnInit } from "@angular/core";
+import { IUserSchema, userInfo } from "../../GlobalVariables";
 import { AppComponent } from "../../app.component";
+import { TeacherFormComponent } from "../../components/teacher-form/teacher-form.component";
 
 @Component({
   selector: 'app-account-profile',
   templateUrl: './account-profile.component.html',
   styleUrls: ['./account-profile.component.scss']
 })
-export class AccountProfileComponent implements OnInit {
-  user: any = null;
+export class AccountProfileComponent {
+  user: IUserSchema;
   accountType: string = '';
 
   async logout() {
@@ -25,11 +25,13 @@ export class AccountProfileComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
+  constructor(private router: Router) {
+    this.user = userInfo;
+
     const cb = async () => {
       this.user = userInfo;
 
-      switch (this.user.accountType) {
+      switch (this.user?.accountType) {
         case null:
           this.accountType = 'Не авторизован';
           break;
@@ -51,13 +53,12 @@ export class AccountProfileComponent implements OnInit {
           break;
       }
 
+      // @ts-ignore
       this.user.created = new Date(Date.parse(this.user.created)).toLocaleDateString("ru-RU");
     }
 
     AppComponent.WaitForUpdateUser(cb);
   }
 
-  constructor(private router: Router) {}
-
-  protected readonly EducatablePeoples = EducatablePeoples;
+  protected readonly TeacherFormComponent = TeacherFormComponent;
 }

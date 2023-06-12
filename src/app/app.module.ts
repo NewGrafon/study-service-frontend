@@ -13,6 +13,8 @@ import { TeacherCardComponent } from './components/teacher-card/teacher-card.com
 import { IncludesEducatablePeoples, MenuComponent } from './components/menu/menu.component';
 import { ModerationComponent } from './pages/moderation/moderation.component';
 import { TeacherFormComponent } from './components/teacher-form/teacher-form.component';
+import { PopupSystemComponent } from './components/popup-system/popup-system.component';
+import { ModerationItemComponent } from './components/moderation-item/moderation-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TeacherFormComponent } from './components/teacher-form/teacher-form.com
     MenuComponent,
     ModerationComponent,
     IncludesEducatablePeoples,
-    TeacherFormComponent
+    TeacherFormComponent,
+    PopupSystemComponent,
+    ModerationItemComponent
   ],
   imports: [
     BrowserModule,

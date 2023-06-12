@@ -1,9 +1,9 @@
-<div class="popup-bg" onclick="closePopup('popUpteacher', 'popup-bg')">
+<div class="popup-bg" (click)="closeForm()">
 
 </div>
 <form name="teacher-form" action="/teacher_send_form" method="POST">
   <div class="popUpteacher">
-    <div class="closePopup" onclick="closePopup('popUpteacher', 'popup-bg')">X</div>
+    <div class="closePopup" (click)="closeForm()">X</div>
     <p>Образование</p>
     <input name="education" type="text" required>
     <p>Место обучения</p>

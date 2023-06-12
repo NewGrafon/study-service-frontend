@@ -56,10 +56,10 @@
 
 .list {
   position: relative;
-  width: 70%;
+  width: 840px;
   height: auto;
   background-color: white;
-  left: 15%;
+  left: calc(50% - 840px/2);
   margin-top: 15px;
   border-radius: 14px;
   display: flex;

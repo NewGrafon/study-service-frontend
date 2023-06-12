@@ -1,5 +1,5 @@
 .item {
-  width: 240px;
+  width: 800px;
   height: 140px;
   border: 2px solid #e7a83c;
   background-color: white;
@@ -11,6 +11,10 @@
   justify-content: center;
   font-size: 18px;
   cursor: pointer;
+
+  p {
+    text-align: center;
+  }
 }
 
 .item-form {

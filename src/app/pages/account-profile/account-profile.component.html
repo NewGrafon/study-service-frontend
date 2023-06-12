@@ -24,7 +24,7 @@
       </div>
       <button (click)="logout()">Выход</button>
     </div>
-    <div class="be-teacher">
+    <div class="be-teacher" *ngIf="user.accountType < 1">
       <p>Заполните <span class="openPopup" (click)="TeacherFormComponent.Instance.openForm()">форму</span> и
       станьте проподавателем.</p>
     </div>

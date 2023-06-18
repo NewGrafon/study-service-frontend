@@ -5,8 +5,26 @@
 <div class="hidden item-form" id="{{ _id }}">
   <div class="bg" (click)="closeRequest()"></div>
   <div class="content">
-    <div (click)="closeRequest()">X</div>
-    <button (click)="touchRequest(TouchType.accept)">Одобрить</button>
-    <button (click)="touchRequest(TouchType.reject)">Отклонить</button>
+    <p class="closeModPopup" (click)="closeRequest()">X</p>
+    <p>Образование</p>
+    <p>{{ item?.requestInfo?.education }}</p>
+    <p>Место обучения</p>
+    <p>{{ item?.requestInfo?.educationPlace }}</p>
+    <p>Стаж работы</p>
+    <p>{{ item?.requestInfo?.workExperience }}</p>
+    <p>Опишите себя</p>
+    <p>{{ item?.requestInfo?.aboutMe }}</p>
+    <p>Кому будете преподавать</p>
+    <ng-container *ngFor="let people of item?.requestInfo?.canEducatePeoples">
+        <p>{{ people }}</p>
+    </ng-container>
+    <p>Что можете преподавать</p>
+    <ng-container *ngFor="let studyWay of item?.requestInfo?.studyWays">
+      <p>{{ studyWay }}</p>
+    </ng-container>
+    <div class="touches">
+      <button (click)="touchRequest(TouchType.accept)">Одобрить</button>
+      <button (click)="touchRequest(TouchType.reject)">Отклонить</button>
+    </div>
   </div>
 </div>

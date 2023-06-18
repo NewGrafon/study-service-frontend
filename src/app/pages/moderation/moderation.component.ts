@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {EducatablePeoples, StudyWays} from "../../global-variables";
 
 @Component({
   selector: 'app-moderation',
@@ -9,9 +10,7 @@ export class ModerationComponent {
 
   static listContent: IItem[] = [];
 
-  static deleteItem(_id: string): void {
-    this.listContent = this.listContent.filter(item => item.creator._id !== _id);
-  }
+  static Instance: ModerationComponent;
 
   async changeType(elem: any): Promise<void> {
 
@@ -44,6 +43,11 @@ export class ModerationComponent {
   }
 
   constructor() {
+    ModerationComponent.Instance = this;
+    this.updateRequests();
+  }
+
+  updateRequests(): void {
     const url = '/api/get_new_teachers';
 
     fetch(url)
@@ -73,7 +77,8 @@ export interface IItem {
     education: string,
     educationPlace: string,
     workExperience: string,
-    canEducatePeoples: string[],
-    educateDirections: string[],
+    aboutMe: string,
+    canEducatePeoples: EducatablePeoples[],
+    studyWays: StudyWays[],
   }
 }

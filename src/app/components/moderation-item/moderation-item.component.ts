@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IItem, ModerationComponent} from "../../pages/moderation/moderation.component";
 import {PopupSystemComponent} from "../popup-system/popup-system.component";
+import {EducatablePeoples} from "../../global-variables";
 
 @Component({
   selector: 'app-moderation-item',
@@ -36,16 +37,17 @@ export class ModerationItemComponent implements OnInit {
     });
     const result = await response.json();
     if (result.result) {
-      ModerationComponent.deleteItem(this._id);
       PopupSystemComponent.SendMessage(`Запрос ${type === TouchType.accept ? 'одобрен' : 'отклонен'}.`);
     } else {
       PopupSystemComponent.SendMessage(result.error);
     }
 
+    ModerationComponent.Instance.updateRequests();
     this.closeRequest();
   }
 
   protected readonly TouchType = TouchType;
+  protected readonly EducatablePeoples = EducatablePeoples;
 }
 
 enum TouchType {

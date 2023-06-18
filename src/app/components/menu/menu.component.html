@@ -4,9 +4,11 @@
       <div class="PreSchoolContent">
         <div class="popUp">
         <ng-container *ngFor="let sLink of StudyLinks;">
-          <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: underSchoolars">
-            <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 0)">{{ sLink.studyWay }}</a>
-          </div>
+            <a
+              class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: underSchoolars"
+              href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 0)">
+              {{ sLink.studyWay }}
+            </a>
         </ng-container>
         </div>
       </div>
@@ -16,9 +18,11 @@
       <div class="SchoolContent">
         <div class="popUp">
           <ng-container *ngFor="let sLink of StudyLinks;">
-            <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: schoolars">
-              <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 1)">{{ sLink.studyWay }}</a>
-            </div>
+            <a
+              class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: schoolars"
+              href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 1)">
+              {{ sLink.studyWay }}
+            </a>
           </ng-container>
         </div>
       </div>
@@ -29,9 +33,11 @@
       <div class="StudentContent">
         <div class="popUp">
           <ng-container *ngFor="let sLink of StudyLinks;">
-            <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: students">
-              <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 2)">{{ sLink.studyWay }}</a>
-            </div>
+            <a
+              class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: students"
+              href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 2)">
+              {{ sLink.studyWay }}
+            </a>
           </ng-container>
         </div>
       </div>

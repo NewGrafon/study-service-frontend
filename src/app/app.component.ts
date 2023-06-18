@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {environment} from "../environments/environment";
-import {isLogged, userInfo, UpdateUser} from "./GlobalVariables";
+import {isLogged, userInfo, UpdateUser} from "./global-variables";
 import {Event, NavigationEnd, NavigationError, NavigationStart, Router} from "@angular/router";
 
 @Component({

@@ -1,11 +1,11 @@
-<div [ngClass]="['menu', currentRoute === '/' ? '' : 'hidden']">
+<div [ngClass]="['menu', currentRoute === '/' || currentRoute === '/#SWEP_Selectors' ? '' : 'hidden']">
     <div class="preschool">
       <p>Для дошкольников</p><img class="arrow" src="./assets/img/arrowdown.png">
       <div class="PreSchoolContent">
         <div class="popUp">
         <ng-container *ngFor="let sLink of StudyLinks;">
           <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: underSchoolars">
-            <p>{{ sLink.studyWay }}</p>
+            <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 0)">{{ sLink.studyWay }}</a>
           </div>
         </ng-container>
         </div>
@@ -17,7 +17,7 @@
         <div class="popUp">
           <ng-container *ngFor="let sLink of StudyLinks;">
             <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: schoolars">
-              <p>{{ sLink.studyWay }}</p>
+              <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 1)">{{ sLink.studyWay }}</a>
             </div>
           </ng-container>
         </div>
@@ -30,7 +30,7 @@
         <div class="popUp">
           <ng-container *ngFor="let sLink of StudyLinks;">
             <div class="item" *ngIf="sLink.availablePeoples | IncludesEducatablePeoples: students">
-              <p>{{ sLink.studyWay }}</p>
+              <a href="#SWEP_Selectors" (click)="HomeComponent.ChangeSWAndEP(sLink.studyWay, 2)">{{ sLink.studyWay }}</a>
             </div>
           </ng-container>
         </div>

@@ -10,6 +10,8 @@
     <input name="educationPlace" type="text" required>
     <p>Стаж работы</p>
     <input name="workExperience" type="text" required>
+    <p>Опишите себя</p>
+    <textarea name="aboutMe" required></textarea>
     <p>Кому преподавать</p>
     <ng-container *ngFor="let people of EducatablePeoples | keyvalue">
       <label class="checkbox">

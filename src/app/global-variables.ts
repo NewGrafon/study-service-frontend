@@ -1,3 +1,5 @@
+import {Type} from "@angular/core";
+
 export let isLogged: boolean = false;
 
 export let userInfo: IUserSchema = {
@@ -40,6 +42,7 @@ export const schoolars: EducatablePeoples[] = [EducatablePeoples.Школьни�
 export const students: EducatablePeoples[] = [EducatablePeoples.Студенты];
 
 export enum StudyWays {
+  Рисование = "Рисование",
   Математика = "Математика",
   Алгебра = "Алгебра",
   Геометрия = "Геометрия",
@@ -55,9 +58,16 @@ export enum StudyWays {
   Обществознание = "Обществознание",
   Экономика = "Экономика",
   Веб_дизайн = "Веб-дизайн",
+  Программирование = "Программирование",
 }
 
 export const StudyLinks: IStudyLinksElem[] = [
+  {
+    studyWay: StudyWays.Рисование,
+    availablePeoples: [
+      EducatablePeoples.Дошкольники
+    ]
+  },
   {
     studyWay: StudyWays.Математика,
     availablePeoples: [
@@ -103,8 +113,7 @@ export const StudyLinks: IStudyLinksElem[] = [
     studyWay: StudyWays.Информатика,
     availablePeoples: [
       EducatablePeoples.Школьники_5_9,
-      EducatablePeoples.Школьники_10_11,
-      EducatablePeoples.Студенты,
+      EducatablePeoples.Школьники_10_11
     ]
   },
   {
@@ -154,8 +163,6 @@ export const StudyLinks: IStudyLinksElem[] = [
   {
     studyWay: StudyWays.История,
     availablePeoples: [
-      EducatablePeoples.Школьники_5_9,
-      EducatablePeoples.Школьники_10_11,
       EducatablePeoples.Студенты
     ]
   },
@@ -170,10 +177,30 @@ export const StudyLinks: IStudyLinksElem[] = [
     availablePeoples: [
       EducatablePeoples.Студенты
     ]
+  },
+  {
+    studyWay: StudyWays.Программирование,
+    availablePeoples: [
+      EducatablePeoples.Студенты
+    ]
   }
 ];
 
 export interface IStudyLinksElem {
   studyWay: StudyWays,
   availablePeoples: EducatablePeoples[]
+}
+
+export function StudyWayAndEducatablePeoplesIsCompatibility(sw: StudyWays, ep: EducatablePeoples): boolean {
+  let result: boolean = false;
+  StudyLinks.forEach(item => {
+    if (item.studyWay === sw) {
+      if (item.availablePeoples.includes(ep)) {
+        result = true;
+      }
+      return;
+    }
+  });
+
+  return result;
 }

@@ -4,13 +4,41 @@
         которые помогут вам выучить любой предмет.<br>
         За 8 лет работы нам доверились 500000 студентов.</p>
 
-    <img src="./assets/img/womanBG.png">
+    <img ngSrc="./assets/img/womanBG.png" height="690" width="1920">
 </div>
 <div class="title">
     <p style="font-size: 60px; color: #e7a83c;">Мы поможем вам найти лучшего репетитора</p>
     <p style="font-size: 24px;">Выбирайте из N репетиторов по {{ StudyLinks.length }} предметам</p>
+
+</div>
+<div class="selectCategories" id="SWEP_Selectors">
+  <div>
+    <p>Обучаемый</p>
+    <select [(ngModel)]="selectedEducatablePeoples" #epSelect (change)="selectEPChanged(getEPByValue(epSelect.value))">
+    <ng-container *ngFor="let educPeoples of EducatablePeoples | keyvalue">
+      <option value="{{ educPeoples.value }}">
+        {{ educPeoples.value.toString().replaceAll('_', ' ') }}
+      </option>
+    </ng-container>
+  </select>
+  </div>
+  <div>
+    <p>Учебное направление</p>
+    <select [(ngModel)]="selectedStudyWay" [style]="{ width: epSelect.offsetWidth+'px' }">
+      <ng-container *ngFor="let studyWay of StudyWays | keyvalue">
+        <option *ngIf="StudyWayAndEducatablePeoplesIsCompatibility(getSWByKey(studyWay.key), selectedEducatablePeoples)" value="{{ studyWay.value }}">
+          {{ studyWay.value.toString().replaceAll('_', ' ') }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+
 </div>
 <div class="teachers">
-  <app-teacher-card></app-teacher-card>
-  <app-teacher-card></app-teacher-card>
+  <ng-container *ngFor="let teacher of allTeachers">
+    <app-teacher-card
+      *ngIf="teacher.teacherInfo.studyWays.includes(selectedStudyWay) && teacher.teacherInfo.canEducatePeoples.includes(selectedEducatablePeoples)"
+      [teacher]="teacher"
+    > </app-teacher-card>
+  </ng-container>
 </div>

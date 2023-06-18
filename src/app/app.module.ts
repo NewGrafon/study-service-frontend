@@ -15,6 +15,8 @@ import { ModerationComponent } from './pages/moderation/moderation.component';
 import { TeacherFormComponent } from './components/teacher-form/teacher-form.component';
 import { PopupSystemComponent } from './components/popup-system/popup-system.component';
 import { ModerationItemComponent } from './components/moderation-item/moderation-item.component';
+import {NgOptimizedImage} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { ModerationItemComponent } from './components/moderation-item/moderation
     PopupSystemComponent,
     ModerationItemComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

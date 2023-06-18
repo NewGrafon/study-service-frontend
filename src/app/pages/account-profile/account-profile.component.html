@@ -2,9 +2,10 @@
 <app-teacher-form></app-teacher-form>
   <div>
     <div class="userinfo">
-      <div class="profileImg">
-        <img src="./assets/img/bekit.png">
-      </div>
+      <label class="profileImg">
+        <div id="profile_picture"></div>
+        <input class="hidden" type="file" name="image" #image (change)="changeAvatar(image)">
+      </label>
       <div class="shortInfo">
         <p>{{ user.firstname }} {{ user.lastname }}</p>
         <p>{{ accountType }}</p>

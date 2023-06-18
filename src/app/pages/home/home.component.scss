@@ -31,3 +31,23 @@
   flex-direction: column;
 }
 
+.selectCategories {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  select {
+    font-size: 24px;
+
+    option {
+      font-size: 24px;
+    }
+  }
+}

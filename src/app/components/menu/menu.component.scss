@@ -18,8 +18,8 @@
 
 .popUp {
   display: flex;
-  width: 520px;
-  height: 400px;
+  width: 480px;
+  height: 376px;
   color: white;
   background-color: #fff;
   border-radius: 20px;
@@ -27,6 +27,8 @@
   align-content: flex-start;
   overflow-y: auto;
   justify-content: space-around;
+  padding: 16px 20px 0 20px;
+  gap: 20px;
 }
 
 
@@ -34,13 +36,11 @@
   width: 200px;
   height: 40px;
   background-color: #e7a83c;
-  margin-top: 20px;
   border-radius: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
 }
 
 .arrow {
@@ -88,7 +88,7 @@
   transition-duration: .3s, 0s;
   transition-delay: 0s, .3s;
   left: 0;
-  top: 62px;
+  top: 60px;
 }
 
 .SchoolContent {
@@ -99,8 +99,8 @@
   transition-property: opacity, visibility;
   transition-duration: .3s, 0s;
   transition-delay: 0s, .3s;
-  left: calc(50% - 260px);
-  top: 62px;
+  left: calc(50% - 240px);
+  top: 60px;
 }
 
 .StudentContent {
@@ -112,7 +112,7 @@
   transition-duration: .3s, 0s;
   transition-delay: 0s, .3s;
   right: 0;
-  top: 62px;
+  top: 60px;
 }
 
 @media screen and (max-width: 1626px) {

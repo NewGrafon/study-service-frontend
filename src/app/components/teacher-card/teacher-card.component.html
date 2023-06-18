@@ -1,29 +1,28 @@
-<div class="item">
+<div class="item" *ngIf="teacher !== null">
   <div class="info">
-    <img src="./assets/img/teachers/teacher1.png" class="teacherimg">
+    <img [style]="{
+      backgroundImage: backImg
+    }" class="teacherimg"/>
     <div class="data">
-      <p style="font-size: 46px; line-height: 46px;">Фамилия Имя</p>
+      <p style="font-size: 46px; line-height: 46px;">{{ teacher.firstname }} {{ teacher.lastname }}</p>
       <p style="font-size: 30px; line-height: 36px; color: #e7a83c;">География, биология</p>
-      <div class="discription">
-        <p>Мой опыт преподавания - 2 года, репеттором более 1
-          года.
-          Окончила ВГСПУ, естественно-географический факультет
-          по направлению: Педагогическое образование с двумя профилями
-          подготовки (география, биология) с красным дипломом.
+      <div class="description">
+        <p>
+          {{ teacher.teacherInfo.aboutMe }}
          </p>
       </div>
     </div>
   </div>
   <div class="bottom-content">
     <div class="stats">
-      <div>
-        <img src="./assets/img/class.png">
-        <p>1-11 класс</p>
-      </div>
-      <div>
-        <img src="./assets/img/map.png">
-        <p>Димитровград</p>
-      </div>
+<!--      <div>-->
+<!--        <img src="./assets/img/class.png">-->
+<!--        <p>1-11 класс</p>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <img src="./assets/img/map.png">-->
+<!--        <p>Димитровград</p>-->
+<!--      </div>-->
     </div>
     <div class="money">
       <p class="price">от 500 руб / час</p>

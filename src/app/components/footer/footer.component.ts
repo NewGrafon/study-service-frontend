@@ -8,7 +8,7 @@ import {Event, NavigationEnd, NavigationError, NavigationStart, Router} from "@a
 })
 export class FooterComponent {
   currentRoute: string;
-  acceptedRoutes: string[] = ['/'];
+  acceptedRoutes: string[] = ['/', '/#SWEP_Selectors'];
 
   constructor(private router: Router) {
     this.currentRoute = "/";

@@ -13,6 +13,9 @@
   width: 270px;
   height: 261px;
   border-radius: 8px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .info {
@@ -90,7 +93,7 @@
   color: #686868;
 }
 
-.discription{
+.description{
   font-size: 30px;
   height: 180px;
   overflow-y:auto;

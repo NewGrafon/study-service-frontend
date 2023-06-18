@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
 import { environment } from "../../../environments/environment";
-import { isLogged } from "../../GlobalVariables";
+import { isLogged } from "../../global-variables";
 import {AppComponent} from "../../app.component";
 
 @Component({

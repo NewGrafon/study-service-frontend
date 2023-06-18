@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {EducatablePeoples, StudyLinks} from "../../GlobalVariables";
+import {EducatablePeoples, StudyLinks} from "../../global-variables";
 import {Router} from "@angular/router";
 import {PopupSystemComponent} from "../popup-system/popup-system.component";
 

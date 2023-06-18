@@ -1,6 +1,7 @@
 import {Component, Pipe, PipeTransform} from '@angular/core';
 import {Event, NavigationEnd, Router} from "@angular/router";
-import {EducatablePeoples, schoolars, students, StudyLinks, underSchoolars} from "../../GlobalVariables";
+import {EducatablePeoples, schoolars, students, StudyLinks, underSchoolars} from "../../global-variables";
+import {HomeComponent} from "../../pages/home/home.component";
 
 @Component({
   selector: 'app-menu',
@@ -25,6 +26,7 @@ export class MenuComponent {
   protected readonly underSchoolars = underSchoolars;
   protected readonly schoolars = schoolars;
   protected readonly students = students;
+  protected readonly HomeComponent = HomeComponent;
 }
 
 @Pipe({

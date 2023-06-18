@@ -14,12 +14,14 @@
   </div>
   <div>
     <p>Пароль</p>
-    <input #pass name="password">
+    <input #pass name="password" type="password">
   </div>
   <div>
     <p>Подтвердите пароль</p>
-    <input (input)="checkPassword(pass.value, rpass.value) ? rpass.classList.remove('red-outline') : rpass.classList.add('red-outline')"
-      #rpass id="repeatPassword">
+    <input type="password"
+      (input)="checkPassword(pass.value, rpass.value) ? rpass.classList.remove('red-outline') : rpass.classList.add('red-outline')"
+      #rpass id="repeatPassword"
+    />
   </div>
 
   <button

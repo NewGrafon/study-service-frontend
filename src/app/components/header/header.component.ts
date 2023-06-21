@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
 import { environment } from "../../../environments/environment";
-import { isLogged } from "../../global-variables";
+import {isLogged, IStudyLinksElem, StudyLinks} from "../../global-variables";
 import {AppComponent} from "../../app.component";
+import {HomeComponent} from "../../pages/home/home.component";
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,18 @@ import {AppComponent} from "../../app.component";
 export class HeaderComponent {
   currentRoute: string;
   isLogged: boolean = false;
+
+  searchList: IStudyLinksElem[] = [];
+
+  searchInput(event: any): void {
+    const str: string = event.target.value;
+    this.searchList = StudyLinks
+      .filter(item => {
+        return str !== '' && item.studyWay.search(str) !== -1;
+      });
+
+    console.log(this.searchList)
+  }
 
   constructor(private router: Router) {
     this.currentRoute = "/";
@@ -32,4 +45,6 @@ export class HeaderComponent {
       }
     });
   }
+
+  protected readonly HomeComponent = HomeComponent;
 }

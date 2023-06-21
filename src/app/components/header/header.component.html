@@ -4,10 +4,27 @@
       <span>N</span>ame
     </p>
     <div class="search">
-      <input type="text">
+      <input type="text" (input)="searchInput($event)" alt="0" (focusin)="sInput.alt = '1'" (focusout)="sInput.alt = '0'; sInput.value = '';" #sInput>
       <div class="img-bg">
         <img src="./assets/img/search.png">
       </div>
+    </div>
+    <div class="search_block" id="sb0" [style]="{
+      display: sInput.alt === '1' || searchBlock.id === 'sb1' ? 'flex' : 'none'
+    }"
+         #searchBlock (mousemove)="searchBlock.id = 'sb1'" (mouseout)="searchBlock.id = 'sb0'">
+    <ng-container *ngIf="searchList.length > 0 && (sInput.alt === '1' || searchBlock.id === 'sb1')">
+        <ng-container *ngFor="let item of searchList; first as isFirst">
+          <a href="#SWEP_Selectors" [style]="{ marginTop: isFirst ? '48px' : '0' }"
+              (click)="
+              HomeComponent.Instance.selectedStudyWay = item.studyWay;
+              HomeComponent.Instance.selectedEducatablePeoples = item.availablePeoples[0];
+              HomeComponent.Instance.selectEPChanged(item.availablePeoples[0]);
+              searchList = [];">
+            {{ item.availablePeoples[0] }} | {{ item.studyWay }}
+          </a>
+        </ng-container>
+    </ng-container>
     </div>
 
     <div *ngIf="isLogged; then thenBlock else elseBlock"></div>

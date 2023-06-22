@@ -9,7 +9,7 @@
         <img src="./assets/img/search.png">
       </div>
     </div>
-    <div class="search_block" id="sb0" [style]="{
+    <div *ngIf="currentRoute === '/' || currentRoute === '/#SWEP_Selectors'" class="search_block" id="sb0" [style]="{
       display: sInput.alt === '1' || searchBlock.id === 'sb1' ? 'flex' : 'none'
     }"
          #searchBlock (mousemove)="searchBlock.id = 'sb1'" (mouseout)="searchBlock.id = 'sb0'">
